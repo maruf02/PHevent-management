@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Workshop Events",
+    "img": "https://ibb.co/MSCFQxJ",
+    "price": 229.99,
+    "short_desc": "we are expert to manage Hands-on sessions that provide practical skills and knowledge on a specific topic.",
+    "long_desc": "Welcome to our dynamic Workshop Events, where learning comes to life. Our workshops are carefully crafted to provide you with hands-on experiences that go beyond theory, allowing you to acquire practical skills and knowledge that you can immediately apply in your personal and professional life. Led by seasoned experts and industry leaders, these sessions are designed to be interactive, engaging, and transformative. Whether you're looking to master a new skill, deepen your understanding of a particular subject, or simply enjoy the thrill of hands-on learning, our workshops offer a unique opportunity for growth and enrichment. Join us and discover the power of experiential learning in an environment that fosters creativity, collaboration, and personal development."
+  },
+  {
+    "id": 2,
+    "title": "Webinar Event",
+    "img": "https://ibb.co/TwS4wwG",
+    "price": 149.99,
+    "short_desc": "we are expert to manage Online seminars that can reach a global audience, often featuring live presentations and Q&A sessions.",
+    "long_desc": "Welcome to our enlightening Webinar Event series, where knowledge knows no boundaries. Our webinars are a gateway to a world of information and expertise, all accessible from the comfort of your own space. Delivered by subject matter experts and thought leaders, these online sessions offer a convenient way to stay informed, inspired, and connected. Whether you're interested in the latest industry trends, seeking professional development, or exploring new horizons, our webinars provide you with a front-row seat to insightful presentations, engaging discussions, and the opportunity to interact with experts in real time. Join us and unlock a wealth of knowledge, all at your fingertips, as we embrace the digital era of learning and networking"
+  },
+  {
+    "id": 3,
+    "title": "Carrier fair Event",
+    "img": "https://ibb.co/pJcCF9V",
+    "price": 429.99,
+    "short_desc": "we are expert to manage an Events where job seekers can meet with employers and explore job opportunities.",
+    "long_desc": "Welcome to our eagerly awaited Career Fair Event, where the path to your dream career begins. Our event is a bustling hub of opportunity, connection, and professional growth. Here, you'll have the chance to engage with a diverse range of employers and explore a multitude of career prospects across various industries. Network with industry leaders, attend career-enhancing workshops, and even participate in on-the-spot interviews that could open doors to your future. Whether you're a recent graduate, an experienced professional seeking new horizons, or simply looking to advance your career, our Career Fair Event offers something for everyone. Join us, and let us help you take that crucial step toward your ideal career, where success and fulfillment await."
+  },
+  {
+    "id": 4,
+    "title": "Conference Event",
+    "img": "https://ibb.co/nw6ZtW6",
+    "price": 329.99,
+    "short_desc": "we are expert to manage an events of Gatherings for professionals to discuss and exchange ideas in specific fields or industries.",
+    "long_desc": "Step into the world of innovation, knowledge exchange, and collaboration at our distinguished Conference Event. This event serves as a pivotal platform where visionaries, industry leaders, and experts converge to share groundbreaking insights, discuss emerging trends, and foster transformative connections. With a lineup of captivating keynote speakers, engaging panel discussions, and enlightening breakout sessions, our conference promises to be an epicenter of inspiration and learning. Whether you're a seasoned professional eager to stay at the forefront of your industry or an enthusiast looking to explore new horizons, our conference offers a unique opportunity to connect with like-minded individuals, gain valuable expertise, and contribute to shaping the future of our field. Join us for an unforgettable experience that will expand your horizons and leave you inspired to make a lasting impact in your industry."
+  },
+  {
+    "id": 5,
+    "title": "Training Event",
+    "img": "https://ibb.co/THg825H",
+    "price": 529.99,
+    "short_desc": "we are expert to manage an events of Structured programs designed to enhance job-related skills or competencies.",
+    "long_desc": "Welcome to our empowering Training Event, where knowledge transforms into skills and potential becomes expertise. Our training programs are meticulously designed to provide you with practical, hands-on experiences that will enhance your abilities and empower your personal and professional growth. Led by seasoned instructors and industry experts, these events are immersive and interactive, ensuring that you not only understand the concepts but also gain the confidence to apply them effectively. Whether you're seeking to acquire new skills, advance your career, or simply pursue a passion, our training events offer a valuable opportunity for development. Join us and embark on a journey of learning, skill-building, and self-improvement in an environment that fosters excellence and achievement"
+  },
+  {
+    "id": 6,
+    "title": "Bootcamp Event",
+    "img": "https://ibb.co/2sdfZrN",
+    "price": 629.99,
+    "short_desc": "we are expert to manage an events of Intensive training programs for rapid skill acquisition, often in technology-related fields.",
+    "long_desc": "Step into the world of intensive learning and skill mastery at our transformative Bootcamp Event. Our bootcamps are a dynamic fusion of education and hands-on practice, designed to fast-track your journey toward expertise in a specific field. Guided by experienced mentors and industry leaders, these immersive programs offer a focused, high-impact experience that equips you with the knowledge and practical skills needed to excel. Whether you're looking to gain a competitive edge in your career, dive into a new industry, or launch a venture, our bootcamp events provide a unique opportunity to immerse yourself in an accelerated learning environment. Join us and discover the power of focused, rapid skill acquisition, where determination meets achievement, and success is within your grasp."
+  }
+  
+]

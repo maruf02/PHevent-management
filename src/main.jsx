@@ -10,6 +10,10 @@ import ServiceDetails from "./Components/ServiceDetails/ServiceDetails.jsx";
 import AboutPage from "./Components/AboutPage/AboutPage";
 import ServicesPage from "./Components/ServicesPage/ServicesPage";
 import MissionPage from "./Components/MissionPage/MissionPage";
+import SignInPage from "./Components/SignInPage/SignInPage";
+import SignUpPage from "./Components/SignUpPage/SignUpPage";
+import AuthProvider from "./providers/AuthProvider";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,8 +37,20 @@ const router = createBrowserRouter([
         element: <MissionPage></MissionPage>,
       },
       {
+        path: "/signIn",
+        element: <SignInPage></SignInPage>,
+      },
+      {
+        path: "/signUp",
+        element: <SignUpPage></SignUpPage>,
+      },
+      {
         path: "/cardDetails/:id",
-        element: <ServiceDetails></ServiceDetails>,
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../ApiData.json"),
       },
     ],
@@ -43,6 +59,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SignInPage = () => {
-  const { signIn, signInGoogle } = useContext(AuthContext);
+  const { signIn, signInGoogle, createUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -14,13 +14,20 @@ const SignInPage = () => {
     const email = form.get("email");
     const password = form.get("password");
     // console.log(email, password);
+
     signIn(email, password)
       .then((res) => {
         console.log(res.user);
+        console.log("object", email, password);
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.error(err);
+        let errormssge = err.message;
+        if (errormssge === "auth/wrong-password") {
+          console.log("wrong pass");
+        }
+        console.log("objectErr", errormssge, password);
       });
   };
 

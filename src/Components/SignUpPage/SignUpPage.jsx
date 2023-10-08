@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const SignUpPage = () => {
-  const { createUser } = useContext(AuthContext);
+  const [googleUser, setGoogleUser] = useState(null);
+  const [signUpError, setSignUpError] = useState("");
+  const [signUpSuccess, setSignUpSuccess] = useState("");
+  const { createUser, logOut } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -15,15 +19,52 @@ const SignUpPage = () => {
     const image = form.get("ImageURL");
     const email = form.get("email");
     const password = form.get("password");
-    // console.log(name, image, email, password);
+    console.log(name, image, email, password);
+    // console.log("pass", password);
     //   create user
+    setSignUpError("");
+    setSignUpSuccess("");
+
+    if (password.length < 6) {
+      setSignUpError("Password must be minimum 6 character or more");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setSignUpError("Password must include one Capital letter");
+      return;
+    } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)) {
+      setSignUpError("password have must include one special character");
+      return;
+    }
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
-        navigate(location?.state ? location.state : "/");
+        //   imageURL set
+        updateProfile(res.user, {
+          displayName: name,
+          photoURL: image,
+        })
+          .then(() => {
+            console.log(
+              "Name and imageURL updated in Firebase Authentication."
+            );
+          })
+          .catch((error) => {
+            console.error("Error updating profile:", error);
+          });
+        logOut()
+          .then(() => {
+            console.log("User logged out after signup.");
+          })
+          .catch();
+        //   imageURL set
+        setGoogleUser(res.user);
+        setSignUpSuccess("User Created Successfully");
+        navigate(location?.state ? location.state : "/signIn");
       })
       .catch((error) => {
         console.error(error);
+        setSignUpError(error.message);
+        console.log("abc", error.message);
       });
   };
   const handleSignInGoogle = () => {
@@ -115,6 +156,11 @@ const SignUpPage = () => {
               <button className="btn btn-primary text-2xl">SIGNUP</button>
             </div>
           </form>
+
+          {signUpSuccess && (
+            <p className="text-green-700 text-lg">{signUpSuccess}</p>
+          )}
+          {signUpError && <p className="text-red-700 text-lg">{signUpError}</p>}
           <p className="text-2xl text-blue-600 text-center">SignUp Via:</p>
           {/* google and github */}
           <div className="pb-10 mx-auto flex gap-5  ">

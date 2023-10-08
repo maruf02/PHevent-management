@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUpPage = () => {
   const { createUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -18,12 +20,22 @@ const SignUpPage = () => {
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
       });
   };
-
+  const handleSignInGoogle = () => {
+    signInGoogle()
+      .then((res) => {
+        console.log(res.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
   return (
     <div className="py-20">
       <div className="hero ">
@@ -107,7 +119,10 @@ const SignUpPage = () => {
           {/* google and github */}
           <div className="pb-10 mx-auto flex gap-5  ">
             <div className=" mt-6 flex ">
-              <button className="btn btn-primary text-xl">
+              <button
+                onClick={handleSignInGoogle}
+                className="btn btn-primary text-xl"
+              >
                 <FaGoogle></FaGoogle> Google
               </button>
             </div>

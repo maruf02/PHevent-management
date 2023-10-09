@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -25,8 +25,8 @@ const SignInPage = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        console.error(err);
-        console.error("error code:", err.code);
+        // console.error(err);
+        // console.error("error code:", err.code);
         // toast.error(err.code);
         Swal.fire(err.code);
       });
@@ -35,12 +35,12 @@ const SignInPage = () => {
   const handleSignInGoogle = () => {
     signInGoogle()
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
         Swal.fire("Login Successfully via Google!");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
       });
   };
   return (

@@ -14,10 +14,10 @@ const AboutUsSection = () => {
           tools they need to thrive in an ever-evolving world.
         </h2>
       </div>
-      <h2 className="text-black text-3xl underline pt-10">
+      <h2 className="text-black text-center md:text-left text-3xl underline pt-10">
         What Sets Us Apart:
       </h2>
-      <div className="py-10 grid grid-cols-4 gap-4">
+      <div className="py-10 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="card  bg-blue-500 text-white shadow-xl">
           <div className="card-body">
             <h2 className="card-title text-3xl">Expertise!</h2>

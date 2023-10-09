@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SingleCard = ({ card }) => {
   const { id, title, img, price, short_desc } = card;
-  console.log(title);
+  // console.log(title);
   return (
     <div className="">
       <div className="card  bg-base-100 shadow-xl hover:border-green-600 hover:border-solid hover:border-4">

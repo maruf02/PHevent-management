@@ -94,9 +94,11 @@ const Navbar = () => {
             <img
               src={user?.photoURL}
               alt=""
-              className="mr-5 w-10 h-10 rounded-full"
+              className="mr-5 w-10 h-10 rounded-full relative left-32 md:left-0 mt-24 md:mt-0"
             />
-            <p className="text-2xl pr-5">{user.displayName}</p>
+            <p className="text-2xl pr-0 md:pr-5  mt-20 md:mt-0">
+              {user.displayName}
+            </p>
             <button
               onClick={handleSignOut}
               className="btn btn-secondary text-lg font-bold"

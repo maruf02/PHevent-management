@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 
 const SignUpPage = () => {
-  const [googleUser, setGoogleUser] = useState(null);
-  const [signUpError, setSignUpError] = useState("");
-  const [signUpSuccess, setSignUpSuccess] = useState("");
+  // const [googleUser, setGoogleUser] = useState(null);
+  // const [signUpError, setSignUpError] = useState("");
+  // const [signUpSuccess, setSignUpSuccess] = useState("");
   const { createUser, signInGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,44 +38,39 @@ const SignUpPage = () => {
     }
     createUser(email, password)
       .then((res) => {
-        console.log(res.user);
-        //   imageURL set
+        // console.log(res.user);
         updateProfile(res.user, {
           displayName: name,
           photoURL: image,
         })
           .then(() => {
-            console.log(
-              "Name and imageURL updated in Firebase Authentication."
-            );
-
+            // console.log(name, image);
             // window.location.reload();
           })
           .catch((error) => {
-            console.error("Error updating profile:", error);
+            // console.error("Error updating profile:", error);
           });
-        //   imageURL set
-        setGoogleUser(res.user);
-        setSignUpSuccess("User Created Successfully");
+        // setGoogleUser(res.user);
+        // setSignUpSuccess("User Created Successfully");
         Swal.fire("User Created Successfully");
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
-        console.error(error);
-        setSignUpError(error.message);
+        // console.error(error);
+        // setSignUpError(error.message);
         Swal.fire(error.code);
-        console.log("abc", error.message);
+        // console.log("abc", error.message);
       });
   };
   const handleSignInGoogle = () => {
     signInGoogle()
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
         Swal.fire("Login Successfully via Google");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
       });
   };
   return (

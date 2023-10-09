@@ -1,9 +1,8 @@
 import React from "react";
-import Swiper from "swiper";
-import "swiper/css";
+
 const Banner = () => {
   return (
-    <div className="py-10 ">
+    <div className="py-10 w-full">
       <div
         className="hero h-[500px] "
         style={{

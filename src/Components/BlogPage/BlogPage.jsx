@@ -17,7 +17,7 @@ const BlogPage = () => {
           These Event Help to Grow someone Career.
         </p>
       </div>
-      <div className="w-full h-full border mt-5 grid grid-cols-3 gap-10">
+      <div className="w-full h-full  mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {allCards.map((card) => (
           <BlogPageCard key={card.id} card={card}></BlogPageCard>
         ))}

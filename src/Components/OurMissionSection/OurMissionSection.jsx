@@ -14,8 +14,10 @@ const OurMissionSection = () => {
         </h2>
       </div>
       <div>
-        <h2 className="text-black text-4xl underline pt-10">Why Choose Us:</h2>
-        <div className="py-10 grid grid-cols-4 gap-4">
+        <h2 className="text-black text-center md:text-left text-4xl underline pt-10">
+          Why Choose Us:
+        </h2>
+        <div className="py-10 grid grid-cols-1 px-4 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="card  bg-green-600 text-white shadow-xl">
             <div className="card-body">
               <h2 className="card-title text-3xl">Quality Assurance!</h2>

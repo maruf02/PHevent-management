@@ -9,7 +9,7 @@ const BlogPageCard = ({ card }) => {
           <img src={img} alt="Card Picture" className="w-full h-64" />
         </figure>
         <div className="card-body ">
-          <div className="h-44">
+          <div className="lg:h-56">
             <h2 className="text-2xl font-bold">{event_name}</h2>
             <h2 className="text-lg font-bold ">Type:- {event_type}</h2>
             <h2 className="card-title">Date:- {date}</h2>

@@ -6,9 +6,9 @@ import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 
 const SignUpPage = () => {
-  // const [googleUser, setGoogleUser] = useState(null);
-  // const [signUpError, setSignUpError] = useState("");
-  // const [signUpSuccess, setSignUpSuccess] = useState("");
+  const [googleUser, setGoogleUser] = useState(null);
+  const [signUpError, setSignUpError] = useState("");
+  const [signUpSuccess, setSignUpSuccess] = useState("");
   const { createUser, signInGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -50,14 +50,14 @@ const SignUpPage = () => {
           .catch((error) => {
             // console.error("Error updating profile:", error);
           });
-        // setGoogleUser(res.user);
-        // setSignUpSuccess("User Created Successfully");
+        setGoogleUser(res.user);
+        setSignUpSuccess("User Created Successfully");
         Swal.fire("User Created Successfully");
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         // console.error(error);
-        // setSignUpError(error.message);
+        setSignUpError(error.message);
         Swal.fire(error.code);
         // console.log("abc", error.message);
       });
@@ -152,11 +152,11 @@ const SignUpPage = () => {
               <button className="btn btn-primary text-2xl">SIGNUP</button>
             </div>
           </form>
-          {/* 
+
           {signUpSuccess && (
             <p className="text-green-700 text-lg">{signUpSuccess}</p>
           )}
-          {signUpError && <p className="text-red-700 text-lg">{signUpError}</p>} */}
+          {signUpError && <p className="text-red-700 text-lg">{signUpError}</p>}
           <p className="text-2xl text-blue-600 text-center">SignUp Via:</p>
           {/* google and github */}
           <div className="pb-10 mx-auto flex gap-5  ">

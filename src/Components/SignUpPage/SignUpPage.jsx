@@ -48,6 +48,8 @@ const SignUpPage = () => {
             console.log(
               "Name and imageURL updated in Firebase Authentication."
             );
+
+            // window.location.reload();
           })
           .catch((error) => {
             console.error("Error updating profile:", error);

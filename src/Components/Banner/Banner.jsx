@@ -7,8 +7,7 @@ const Banner = () => {
       <div
         className="hero h-[500px] "
         style={{
-          backgroundImage:
-            "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+          backgroundImage: "url(https://i.ibb.co/RDrfYNJ/Workshop-Events.jpg)",
         }}
       >
         <div className="hero-overlay bg-opacity-80 "></div>

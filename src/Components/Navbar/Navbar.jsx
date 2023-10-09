@@ -32,6 +32,24 @@ const Navbar = () => {
           Mission
         </NavLink>
       </li>
+      <li>
+        {user ? (
+          <NavLink to="/career" className="activeNavLink ">
+            Career
+          </NavLink>
+        ) : (
+          ""
+        )}
+      </li>
+      <li>
+        {user ? (
+          <NavLink to="/blog" className="activeNavLink ">
+            Blog
+          </NavLink>
+        ) : (
+          ""
+        )}
+      </li>
     </>
   );
   return (

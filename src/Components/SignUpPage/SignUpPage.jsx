@@ -9,10 +9,9 @@ const SignUpPage = () => {
   const [googleUser, setGoogleUser] = useState(null);
   const [signUpError, setSignUpError] = useState("");
   const [signUpSuccess, setSignUpSuccess] = useState("");
-  const { createUser, logOut } = useContext(AuthContext);
+  const { createUser, signInGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  // const Swal = require("sweetalert2");
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -172,11 +171,11 @@ const SignUpPage = () => {
                 <FaGoogle></FaGoogle> Google
               </button>
             </div>
-            <div className=" mt-6 flex ">
+            {/* <div className=" mt-6 flex ">
               <button className="btn btn-primary text-xl">
                 <FaGithub></FaGithub> Github
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

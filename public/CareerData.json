@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/RDrfYNJ/Workshop-Events.jpg",
+        "event_type": "Job Fair",
+        "event_name": "Tech Career Expo 2024",
+        "date": "2024-10-15",
+        "location": "New York Convention Center",
+        "description": "A job fair focused on technology careers."
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/hdDnwJY/Webinar-Event.jpg",
+        "event_type": "Internship Fair",
+        "event_name": "Summer Internship Showcase",
+        "date": "2024-06-25",
+        "location": "City University Campus",
+        "description": "Showcasing summer internship opportunities for students."
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/JFTDNnC/Carrier-Event.jpg",
+        "event_type": "Career Workshop",
+        "event_name": "Resume Building Workshop",
+        "date": "2024-04-05",
+        "location": "Career Center",
+        "description": "A workshop to help attendees build effective resumes."
+    },
+    {
+        "id": 4,
+        "img": "https://i.ibb.co/RDt3wVj/Conference-Event.jpg",
+        "event_type": "Networking Event",
+        "event_name": "Professional Networking Mixer",
+        "date": "2024-07-20",
+        "location": "Downtown Hotel",
+        "description": "An event for professionals to network and connect."
+    },
+    {
+        "id": 5,
+        "img": "https://i.ibb.co/G0b0yPv/Training-Event.jpg",
+        "event_type": "College Fair",
+        "event_name": "College Expo 2024",
+        "date": "2024-09-10",
+        "location": "Local High School",
+        "description": "Explore college options and meet admissions representatives."
+    },
+    {
+        "id": 6,
+        "img": "https://i.ibb.co/jVDzbSv/Bootcamp-Event.jpg",
+        "event_type": "Diversity and Inclusion Fair",
+        "event_name": "Diversity Career Fair",
+        "date": "2024-11-08",
+        "location": "Diversity Center",
+        "description": "Promoting diverse career opportunities."
+    },
+    {
+        "id": 7,
+        "img": "https://i.ibb.co/RDrfYNJ/Workshop-Events.jpg",
+        "event_type": "Job Interview Event",
+        "event_name": "Company X Hiring Day",
+        "date": "2024-05-30",
+        "location": "Company X Headquarters",
+        "description": "On-site job interviews for various positions."
+    },
+    {
+        "id": 8,
+        "img": "https://i.ibb.co/hdDnwJY/Webinar-Event.jpg",
+        "event_type": "Startup Expo",
+        "event_name": "Startup Showcase",
+        "date": "2024-08-12",
+        "location": "Tech Hub Co-Working Space",
+        "description": "Showcasing innovative startups and job opportunities."
+    },
+    {
+        "id": 9,
+        "img": "https://i.ibb.co/G0b0yPv/Training-Event.jpg",
+        "event_type": "Health and Wellness Fair",
+        "event_name": "Wellness at Work Expo",
+        "date": "2024-03-15",
+        "location": "Community Center",
+        "description": "Promoting health and wellness in the workplace."
+    }
+]

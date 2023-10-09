@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const SignInPage = () => {
   const { signIn, signInGoogle } = useContext(AuthContext);
@@ -22,13 +21,14 @@ const SignInPage = () => {
         // console.log(res.user);
         // console.log("object", email, password);
         // alert("Login successful!");
-        toast.success("Login successful!");
+        Swal.fire("Login Successfully!");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.error(err);
         console.error("error code:", err.code);
-        toast.error(err.code);
+        // toast.error(err.code);
+        Swal.fire(err.code);
       });
   };
 
@@ -36,6 +36,7 @@ const SignInPage = () => {
     signInGoogle()
       .then((res) => {
         console.log(res.user);
+        Swal.fire("Login Successfully via Google!");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
@@ -104,15 +105,14 @@ const SignInPage = () => {
                 <FaGoogle></FaGoogle> Google
               </button>
             </div>
-            <div className=" mt-6 flex ">
+            {/* <div className=" mt-6 flex ">
               <button className="btn btn-primary text-xl">
                 <FaGithub></FaGithub> Github
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

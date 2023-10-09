@@ -14,6 +14,8 @@ import SignInPage from "./Components/SignInPage/SignInPage";
 import SignUpPage from "./Components/SignUpPage/SignUpPage";
 import AuthProvider from "./providers/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import CareerPage from "./Components/CareerPage/CareerPage";
+import BlogPage from "./Components/BlogPage/BlogPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +37,22 @@ const router = createBrowserRouter([
       {
         path: "/mission",
         element: <MissionPage></MissionPage>,
+      },
+      {
+        path: "/career",
+        element: (
+          <PrivateRoute>
+            <CareerPage></CareerPage>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/blog",
+        element: (
+          <PrivateRoute>
+            <BlogPage></BlogPage>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/signIn",

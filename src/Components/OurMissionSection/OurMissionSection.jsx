@@ -2,7 +2,7 @@ import React from "react";
 
 const OurMissionSection = () => {
   return (
-    <div className="py-10 border">
+    <div className="py-10 ">
       <div className="text-center">
         <h2 className="text-5xl text-black underline"> our mission </h2>
         <h2 className="text-black pt-5">

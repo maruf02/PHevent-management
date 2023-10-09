@@ -3,6 +3,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const SignUpPage = () => {
   const [googleUser, setGoogleUser] = useState(null);
@@ -11,6 +12,7 @@ const SignUpPage = () => {
   const { createUser, logOut } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  // const Swal = require("sweetalert2");
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -51,19 +53,16 @@ const SignUpPage = () => {
           .catch((error) => {
             console.error("Error updating profile:", error);
           });
-        logOut()
-          .then(() => {
-            console.log("User logged out after signup.");
-          })
-          .catch();
         //   imageURL set
         setGoogleUser(res.user);
         setSignUpSuccess("User Created Successfully");
-        navigate(location?.state ? location.state : "/signIn");
+        Swal.fire("User Created Successfully");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
         setSignUpError(error.message);
+        Swal.fire(error.code);
         console.log("abc", error.message);
       });
   };
@@ -71,6 +70,7 @@ const SignUpPage = () => {
     signInGoogle()
       .then((res) => {
         console.log(res.user);
+        Swal.fire("Login Successfully via Google");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
@@ -156,11 +156,11 @@ const SignUpPage = () => {
               <button className="btn btn-primary text-2xl">SIGNUP</button>
             </div>
           </form>
-
+          {/* 
           {signUpSuccess && (
             <p className="text-green-700 text-lg">{signUpSuccess}</p>
           )}
-          {signUpError && <p className="text-red-700 text-lg">{signUpError}</p>}
+          {signUpError && <p className="text-red-700 text-lg">{signUpError}</p>} */}
           <p className="text-2xl text-blue-600 text-center">SignUp Via:</p>
           {/* google and github */}
           <div className="pb-10 mx-auto flex gap-5  ">

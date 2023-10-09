@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignInPage = () => {
-  const { signIn, signInGoogle, createUser } = useContext(AuthContext);
+  const { signIn, signInGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -17,17 +19,16 @@ const SignInPage = () => {
 
     signIn(email, password)
       .then((res) => {
-        console.log(res.user);
-        console.log("object", email, password);
+        // console.log(res.user);
+        // console.log("object", email, password);
+        // alert("Login successful!");
+        toast.success("Login successful!");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.error(err);
-        let errormssge = err.message;
-        if (errormssge === "auth/wrong-password") {
-          console.log("wrong pass");
-        }
-        console.log("objectErr", errormssge, password);
+        console.error("error code:", err.code);
+        toast.error(err.code);
       });
   };
 
@@ -111,6 +112,7 @@ const SignInPage = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

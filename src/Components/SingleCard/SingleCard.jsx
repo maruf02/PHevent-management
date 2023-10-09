@@ -6,7 +6,7 @@ const SingleCard = ({ card }) => {
   // console.log(title);
   return (
     <div className="">
-      <div className="card  bg-base-100 shadow-xl hover:border-green-600 hover:border-solid hover:border-4">
+      <div className="card  bg-purple-500 text-white  shadow-xl hover:border-green-600 hover:border-solid hover:border-4">
         <figure className="">
           <img src={img} alt="Card Picture" className="w-full h-64" />
         </figure>

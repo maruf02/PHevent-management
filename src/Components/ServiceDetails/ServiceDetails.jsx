@@ -6,7 +6,7 @@ const ServiceDetails = () => {
   const { id } = useParams();
   const idInt = parseInt(id);
   const card = cards.find((card) => card.id === idInt);
-  console.log(card.title);
+  // console.log(card.title);
   const { title, img, price, duration, long_desc } = card;
   return (
     <div className="container mx-auto text-black flex flex-col items-center ">
